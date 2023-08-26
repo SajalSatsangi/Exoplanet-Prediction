@@ -1,0 +1,148 @@
+<html>
+  <body>
+    <script>
+      const jsonData = {
+        "P_NAME": null,
+        "P_STATUS": 3,
+        "P_MASS": 6165.8633,
+        "P_MASS_ERROR_MIN": -476.742,
+        "P_MASS_ERROR_MAX": 476.742,
+        "P_RADIUS": null,
+        "P_RADIUS_ERROR_MIN": null,
+        "P_RADIUS_ERROR_MAX": null,
+        "P_YEAR": 2007,
+        "P_UPDATED": null,
+        "P_PERIOD": 326.03,
+        "P_PERIOD_ERROR_MIN": -0.32,
+        "P_PERIOD_ERROR_MAX": 0.32,
+        "P_SEMI_MAJOR_AXIS": 1.29,
+        "P_SEMI_MAJOR_AXIS_ERROR_MIN": -0.05,
+        "P_SEMI_MAJOR_AXIS_ERROR_MAX": 0.05,
+        "P_ECCENTRICITY": 0.231,
+        "P_ECCENTRICITY_ERROR_MIN": -0.005,
+        "P_ECCENTRICITY_ERROR_MAX": 0.005,
+        "P_INCLINATION": null,
+        "P_INCLINATION_ERROR_MIN": null,
+        "P_INCLINATION_ERROR_MAX": null,
+        "P_OMEGA": 94.8,
+        "P_OMEGA_ERROR_MIN": -1.5,
+        "P_OMEGA_ERROR_MAX": 1.5,
+        "P_TPERI": 2452899.6,
+        "P_TPERI_ERROR_MIN": -1.6,
+        "P_TPERI_ERROR_MAX": 1.6,
+        "P_ANGULAR_DISTANCE": 13.8,
+        "P_IMPACT_PARAMETER": null,
+        "P_IMPACT_PARAMETER_ERROR_MIN": null,
+        "P_IMPACT_PARAMETER_ERROR_MAX": null,
+        "P_TEMP_MEASURED": null,
+        "P_GEO_ALBEDO": null,
+        "P_GEO_ALBEDO_ERROR_MIN": null,
+        "P_GEO_ALBEDO_ERROR_MAX": null,
+        "P_DETECTION": null,
+        "P_DETECTION_MASS": null,
+        "P_DETECTION_RADIUS": null,
+        "P_ALT_NAMES": null,
+        "P_ATMOSPHERE": null,
+        "S_NAME": null,
+        "S_RA": 185.17928,
+        "S_DEC": 17.792868,
+        "S_MAG": 4.74,
+        "S_DISTANCE": 93.37,
+        "S_DISTANCE_ERROR_MIN": -1.92,
+        "S_DISTANCE_ERROR_MAX": 1.92,
+        "S_METALLICITY": -0.35,
+        "S_METALLICITY_ERROR_MIN": -0.09,
+        "S_METALLICITY_ERROR_MAX": 0.09,
+        "S_MASS": 2.7,
+        "S_MASS_ERROR_MIN": -0.3,
+        "S_MASS_ERROR_MAX": 0.3,
+        "S_RADIUS": 19,
+        "S_RADIUS_ERROR_MIN": -2,
+        "S_RADIUS_ERROR_MAX": 2,
+        "S_TYPE": null,
+        "S_AGE": null,
+        "S_AGE_ERROR_MIN": null,
+        "S_AGE_ERROR_MAX": null,
+        "S_TEMPERATURE": 4742,
+        "S_TEMPERATURE_ERROR_MIN": -100,
+        "S_TEMPERATURE_ERROR_MAX": 100,
+        "S_DISC": null,
+        "S_MAGNETIC_FIELD": null,
+        "S_LOG_G": 2.31,
+        "S_ALT_NAMES": null,
+        "P_ESCAPE": null,
+        "P_POTENTIAL": null,
+        "P_GRAVITY": null,
+        "P_DENSITY": null,
+        "P_HILL_SPHERE": 0.13067063,
+        "P_DISTANCE": 1.3244178,
+        "P_PERIASTRON": 0.99201,
+        "P_APASTRON": 1.58799,
+        "P_DISTANCE_EFF": 1.2987592,
+        "P_FLUX": 101.01141,
+        "P_FLUX_MIN": 64.855456,
+        "P_FLUX_MAX": 166.19194,
+        "P_TEMP_EQUIL": 799.44963,
+        "P_TEMP_EQUIL_MIN": 722.98875,
+        "P_TEMP_EQUIL_MAX": 914.73942,
+        "P_TYPE": null,
+        "S_RADIUS_EST": 19,
+        "S_TYPE_TEMP": null,
+        "S_RA_H": 12.345286,
+        "S_RA_T": null,
+        "S_DEC_T": null,
+        "S_LUMINOSITY": 163.5468,
+        "S_HZ_OPT_MIN": 10.132812,
+        "S_HZ_OPT_MAX": 24.763411,
+        "S_HZ_CON_MIN": 12.834754,
+        "S_HZ_CON_MAX": 23.477907,
+        "S_HZ_CON0_MIN": 13.586847,
+        "S_HZ_CON0_MAX": 23.477907,
+        "S_HZ_CON1_MIN": 12.390643,
+        "S_HZ_CON1_MAX": 23.477907,
+        "S_SNOW_LINE": 34.529063,
+        "S_ABIO_ZONE": 0.47646024,
+        "S_TIDAL_LOCK": 0.64240028,
+        "P_HABZONE_OPT": 0,
+        "P_HABZONE_CON": 0,
+        "P_TYPE_TEMP": null,
+        "P_HABITABLE": 0,
+        "P_ESI": 0.083813263,
+        "S_CONSTELLATION": null,
+        "S_CONSTELLATION_ABR": null,
+        "S_CONSTELLATION_ENG": null,
+        "P_RADIUS_EST": 12.082709,
+        "P_MASS_EST": 6165.8633,
+        "P_SEMI_MAJOR_AXIS_EST": 1.29
+    };
+    
+
+    
+    // Create a fetch request to send the JSON data to the API
+    // Convert the JSON data to a query string
+const queryString = Object.keys(jsonData)
+.map(key => `${key}=${encodeURIComponent(jsonData[key])}`)
+.join('&');
+
+// Define the API endpoint with the query string
+const apiUrl = `https://mlh1.onrender.com?${queryString}`;
+console.log(queryString)
+
+// Create a fetch request to send the GET request to the API
+fetch(apiUrl)
+.then((response) => {
+    if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+    return response.json();
+})
+.then((data) => {
+    console.log(data);
+})
+.catch((error) => {
+    console.error('Error:', error);
+});
+    
+    </script>
+  </body>
+</html>

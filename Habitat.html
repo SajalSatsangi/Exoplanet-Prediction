@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Parallax Scrolling Website | Vanilla Javascript</title>
+    <link rel="stylesheet" href="style.css" />
+    
+  </head>
+  <body>
+    <header>
+      <a href="index.html" class="logo">NucleX</a>
+    <ul>
+      <!-- <li><a href="#">ML Models</a></li> -->
+      <li class="dropdown">
+        <a href="#">ML models ▼</a>
+        <div class="dropdown-content">
+          <a href="Habitat.html">Habitat</a>
+          <a href="page2.html">Button 2</a>
+          <a href="page3.html">Button 3</a>
+          <a href="page4.html">Button 4</a>
+        </div>
+      </li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Work</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </header>
+  
+    <section>
+      <img src="Background.jpg" id="background" />
+      <img src="Nuclex_LOGO.png" id="logo" />
+      <h2 id="text">Into Space</h2>
+      <a href="#" id="btn">Explore</a>
+    </section>
+    <!-- Input elements for user data -->
+    <div class="input-container">
+      <label for="mass">Mass of Exoplanet (kg):</label>
+      <input type="text" id="mass" placeholder="Enter mass" />
+    </div>
+
+    <div class="input-container">
+      <label for="radius">Radius of Exoplanet (m):</label>
+      <input type="text" id="radius" placeholder="Enter radius" />
+    </div>
+
+    <div class="input-container">
+      <label for="distance">Distance from Earth's Surface (km):</label>
+      <input type="text" id="distance" placeholder="Enter distance" />
+    </div>
+
+    <div class="input-container">
+      <label for="temperature">Temperature of Exoplanet (°C):</label>
+      <input type="text" id="temperature" placeholder="Enter temperature" />
+    </div>
+
+    <div class="input-container">
+      <label for="gravity">Gravity of Exoplanet (m/s²):</label>
+      <input type="text" id="gravity" placeholder="Enter gravity" />
+    </div>
+
+    <div class="input-container">
+      <label for="density">Density of Exoplanet (kg/m³):</label>
+      <input type="text" id="density" placeholder="Enter density" />
+    </div>
+
+      <!-- "Predict" button -->
+      <button id="predictBtn">Predict</button>
+
+      <!-- Display prediction results -->
+      <div id="predictionResult">
+          <p>Prediction: <span id="habitablePrediction"></span></p>
+          <p>Accuracy: <span id="predictionAccuracy"></span></p>
+      </div>
+
+      <div id="predictionResult"></div>
+
+    <script src="backend.js"></script>
+
+  
+</body>
+
+  </html>
+
+    

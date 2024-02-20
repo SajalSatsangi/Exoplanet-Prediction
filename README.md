@@ -1,5 +1,7 @@
 # Exo-Planet Predictor
 
+![image](https://github.com/SajalSatsangi/Exoplanet-Prediction/blob/main/Screenshot%20(363).png)
+
 ## Overview
 
 Exo-Planet Predictor is a web-based application that utilizes a robust machine learning model to predict the habitability of exoplanets. The project encompasses both the frontend development and the integration of a sophisticated predictive model based on diverse planetary features.
